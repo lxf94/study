@@ -10,16 +10,22 @@
     <meta name="author" content="FallenAngel">
   
   
-  <meta name="description">
+    <meta name="description" content="1234567891011MOV AL,0MOV BH,41HSUB BH,30HMOV AL,BHMOV BL,9MOV CL,4SHR AL,CLSHL BH,CLSHR BH,CLIMUL BLADD BH,AL
+字符‘A’(41H)-&amp;gt;11H通过左移右移分别提取出高八位0001 低八位0001高八位乘以9加上低八位 -&amp;gt;0000 1010 -&amp;gt; 0AH字符‘1’(30H)">
+  
+  <meta name="description" content="1234567891011MOV AL,0MOV BH,41HSUB BH,30HMOV AL,BHMOV BL,9MOV CL,4SHR AL,CLSHL BH,CLSHR BH,CLIMUL BLADD BH,AL
+字符‘A’(41H)-&amp;gt;11H通过左移右移分别提取出高八位0001 低八位0001高八位乘以9加上低八位 -&amp;gt;0000 1010 -&amp;gt; 0AH字符‘1’(30H)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[8086汇编]输入16进制数组转化为二进制-不利用if和分段">
 <meta property="og:url" content="http://yoursite.com/2016/04/18/8086汇编-输入16进制数组转化为二进制-不利用if和分段/index.html">
 <meta property="og:site_name" content="FallenAngel Study">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-04-18T09:26:07.471Z">
+<meta property="og:description" content="1234567891011MOV AL,0MOV BH,41HSUB BH,30HMOV AL,BHMOV BL,9MOV CL,4SHR AL,CLSHL BH,CLSHR BH,CLIMUL BLADD BH,AL
+字符‘A’(41H)-&amp;gt;11H通过左移右移分别提取出高八位0001 低八位0001高八位乘以9加上低八位 -&amp;gt;0000 1010 -&amp;gt; 0AH字符‘1’(30H)">
+<meta property="og:updated_time" content="2016-04-18T11:18:55.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[8086汇编]输入16进制数组转化为二进制-不利用if和分段">
-<meta name="twitter:description">
+<meta name="twitter:description" content="1234567891011MOV AL,0MOV BH,41HSUB BH,30HMOV AL,BHMOV BL,9MOV CL,4SHR AL,CLSHL BH,CLSHR BH,CLIMUL BLADD BH,AL
+字符‘A’(41H)-&amp;gt;11H通过左移右移分别提取出高八位0001 低八位0001高八位乘以9加上低八位 -&amp;gt;0000 1010 -&amp;gt; 0AH字符‘1’(30H)">
   
     <link rel="alternate" href="/atom.xml" title="FallenAngel Study" type="application/atom+xml">
   
@@ -72,7 +78,10 @@
   
   <div class="entry">
     
-      
+      <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">MOV AL,0</span><br><span class="line">MOV BH,41H</span><br><span class="line">SUB BH,30H</span><br><span class="line">MOV AL,BH</span><br><span class="line">MOV BL,9</span><br><span class="line">MOV CL,4</span><br><span class="line">SHR AL,CL</span><br><span class="line">SHL BH,CL</span><br><span class="line">SHR BH,CL</span><br><span class="line">IMUL BL</span><br><span class="line">ADD BH,AL</span><br></pre></td></tr></table></figure>
+<p>字符<strong>‘A’(41H)</strong>-&gt;11H<br>通过左移右移分别提取出高八位0001 低八位0001<br>高八位乘以9加上低八位 -&gt;<strong>0000 1010 -&gt; 0AH</strong><br>字符<strong>‘1’(30H)</strong>-&gt;01H<br>通过左移右移分别提取出高八位0000 低八位0001<br>高八位乘以9加上低八位 -&gt;<strong>0000 0001 -&gt; 01H</strong></p>
+<p>注:乘以9是因为ABCDEF对于0的偏移刚好对应他们的十进制数-1，而且高八位都为1</p>
+
     
   </div>
   <footer>
